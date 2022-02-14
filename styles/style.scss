@@ -1,0 +1,148 @@
+$fontSize: 20px;
+$lineHeight: 1.5;
+$lineNumbers: 2;
+$height: $fontSize * $lineHeight * $lineNumbers;
+$ellipsisSignWidth: 2em;
+$mainBackground: #121d64;
+
+body {
+    font: $fontSize "Jura", sans-serif;
+    padding: 20px;
+    background-color: $mainBackground;
+}
+
+#table {
+    width: 50%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    background: $mainBackground;
+    box-shadow: 35px 35px 70px #0f1955, -35px -35px 70px #152173;
+}
+
+.tr {
+    position: relative;
+    border-bottom: 0.5px solid grey;
+    &:nth-child(2n + 1) {
+        background-color: #1b2878;
+    }
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.39);
+        cursor: pointer;
+    }
+}
+
+td {
+    padding: 5px;
+    color: #fff;
+}
+
+th {
+    color: #fff;
+    white-space: nowrap;
+    padding: 15px;
+}
+
+#first-name-sort-button,
+#last-name-sort-button,
+#desc-sort-button,
+#color-sort-button {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-left: 5px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 50px;
+    background: $mainBackground;
+    box-shadow: 3px 3px 6px #0f1955, -3px -3px 6px #152173;
+    &:active,
+    &:hover {
+        background: $mainBackground;
+        box-shadow: inset 3px 3px 6px #0f1955, inset -3px -3px 6px #152173;
+    }
+}
+
+#hidden-button-name,
+#hidden-button-lastname,
+#hidden-button-desc,
+#hidden-button-color {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-right: 5px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    background: $mainBackground;
+    box-shadow: 3px 3px 6px #0f1955, -3px -3px 6px #152173;
+    &:active,
+    &:hover {
+        background: $mainBackground;
+        box-shadow: inset 3px 3px 6px #0f1955, inset -3px -3px 6px #152173;
+    }
+}
+
+#input-wrapper {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 100%;
+    width: 50%;
+    height: 60%;
+    padding: 13px;
+    margin-left: 15px;
+    border: none;
+    z-index: 2;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #101a5a, #131f6b);
+    box-shadow: 5px 5px 3px #101a5b, -5px -5px 3px #14206d;
+}
+
+#input {
+    position: absolute;
+    font: $fontSize "Jura", sans-serif;
+    display: block;
+    top: 0;
+    margin: 8px 8px 8px 20px;
+    padding-left: 12px;
+    left: 100%;
+    width: 50%;
+    height: 50px;
+    border: 1px solid grey;
+    z-index: 12;
+    background-color: white;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    background: $mainBackground;
+    box-shadow: inset 5px 5px 10px #090f34, inset -5px -5px 10px #1b2b94;
+    color: white;
+}
+
+#input-name,
+#input-lastname,
+#input-desc,
+#input-color {
+    width: auto;
+    height: 90%;
+    border: 1px solid grey;
+    z-index: 2;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: $lineHeight;
+    height: $height;
+}
+
+.hidden {
+    display: none;
+}
